@@ -25,6 +25,6 @@ public class FileSearching {
     }
 
     public static List<String> fileReading(String filePath) throws IOException {
-        return Files.lines(Paths.get(filePath)).collect(Collectors.toList());
+        return Files.lines(Paths.get(filePath), Charset.forName("ISO-8859-1")).collect(Collectors.toList());
     }
 }
