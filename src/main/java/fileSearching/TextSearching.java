@@ -13,7 +13,7 @@ public class TextSearching {
     public static List<String> Search(List<File> files, String searchingText) throws IOException {
         filesWithText.clear();
         for(File file: files) {
-            if(Files.lines(Paths.get(file.toString())).anyMatch(line -> line.contains(searchingText))) {
+            if(Files.lines(Paths.get(file.toString()), Charset.forName("ISO-8859-1")).anyMatch(line -> line.contains(searchingText))) {
                 filesWithText.add(file.toString());
             }
         }
